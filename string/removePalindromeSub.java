@@ -1,0 +1,34 @@
+/*
+# Intuition
+Check pallindrome in string
+
+# Approach
+if not pallindrome , it will require two steps to empty string
+
+# Complexity
+- Time complexity: O(n)
+
+- Space complexity:O(1) 
+ */
+class Solution {
+    public int removePalindromeSub(String s) {
+        if(s.length()==0) return 0;
+        if(isPalindrome(s)){
+            return 1;
+        }
+        return 2;
+
+    }
+    public boolean isPalindrome(String s){
+        int left=0;
+        int right = s.length()-1;
+        while(right>left){
+            if(s.charAt(left)!=s.charAt(right)){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    } 
+}
